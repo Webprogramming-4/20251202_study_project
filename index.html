@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Word Game</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="game-canvas"></canvas>
+
+    <div class="ui-layer">
+        <div class="score-board">
+            SCORE: <span id="score">0</span>
+        </div>
+        <div class="input-container">
+            <input type="text" id="word-input" placeholder="Type text & Press Enter" autocomplete="off">
+        </div>
+    </div>
+
+    <!-- 시작 모달 -->
+    <div id="start-modal" class="modal">
+        <div class="modal-content">
+            <h1 class="text-3xl font-bold mb-2 text-gray-800">TYPING RAIN</h1>
+            <p class="text-gray-500 mb-6">Type the falling words and<br>press <b>ENTER</b> before they hit the floor!</p>
+            <button class="btn" onclick="game.start()">GAME START</button>
+        </div>
+    </div>
+
+    <!-- 게임오버 모달 -->
+    <div id="game-over-modal" class="modal hidden">
+        <div class="modal-content">
+            <h1 class="text-3xl font-bold mb-2 text-red-500">GAME OVER</h1>
+            <p class="text-xl text-gray-700 mb-4">Final Score: <span id="final-score" class="font-bold text-blue-600">0</span></p>
+            <button class="btn" onclick="game.start()">RETRY</button>
+        </div>
+    </div>
+
+    <!-- JS 파일 연결 -->
+    <script src="script.js"></script>
+</body>
+</html>
